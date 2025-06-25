@@ -1,0 +1,21 @@
+# Ignora tudo por padrão
+*
+
+# Libera os artefatos de build que podem ser necessários
+!target/*.jar            # Spring Boot JARs
+!target/*-runner         # Quarkus binário nativo
+!target/*-runner.jar     # Quarkus JAR
+!target/lib/**           # Quarkus fast-jar libs
+!target/quarkus-app/**   # Quarkus fast-jar structure
+
+# Libera arquivos importantes para o build
+!Dockerfile
+!.dockerignore
+!src/main/docker/**      # Dockerfiles auxiliares usados por alguns projetos
+
+# Libera arquivos de configuração, se usados para conexão com DB/mensageria
+!application.properties
+!application.yml
+
+# (Opcional) permite outros arquivos de configuração
+!*.env
