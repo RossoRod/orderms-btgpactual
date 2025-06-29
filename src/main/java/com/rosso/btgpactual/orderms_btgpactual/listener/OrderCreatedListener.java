@@ -19,7 +19,7 @@ public class OrderCreatedListener {
     private final Logger logger = LoggerFactory.getLogger(OrderCreatedListener.class);
 
     @Autowired
-    private final OrderService orderService;
+    private OrderService orderService;
 
     @RabbitListener(queues = ORDER_CREATED_QUEUE)
     public void listen(Message<OrderCreatedEvent> message){
